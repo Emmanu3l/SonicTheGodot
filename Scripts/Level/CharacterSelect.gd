@@ -84,11 +84,11 @@ func _input(event):
 					
 			# set the level
 			match(levelID):
-				0: # Base Zone Act 1
+				0: # New Base Zone
+					Global.nextZone = load("res://Scene/Zones/BaseZoneNew.tscn")
+				1: # Base Zone Act 1
 					Global.nextZone = load("res://Scene/Zones/BaseZone.tscn") # unnecessary since it's arleady set
-				1: # Base Zone Act 2
+				2: # Base Zone Act 2
 					Global.nextZone = load("res://Scene/Zones/BaseZoneAct2.tscn") # Replace me! I don't exist yet!
-				#2: # Chunk Zone Act 1
-				#	Global.nextZone = load("res://Scene/Zones/ChunkZone.tscn")
 			
 			Global.main.change_scene_to_file(Global.nextZone,"FadeOut","FadeOut",1)
